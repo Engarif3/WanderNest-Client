@@ -1,5 +1,7 @@
 import Container from "../../Container";
+import DropdownMenu from "./DropdownMenu";
 import Logo from "./Logo";
+import SearchBar from "./SearchBar";
 
 
 const Navbar = () => {
@@ -9,8 +11,8 @@ const Navbar = () => {
                 <Container>
                     <div className="flex justify-between items-center gap-4 md:gap-0">
                      <Logo></Logo>  
-                     <div>Search</div>   
-                     <div>Menu</div>   
+                     <SearchBar></SearchBar>  
+                     <DropdownMenu></DropdownMenu>
                     </div>
                 </Container>
             </div>
