@@ -1,4 +1,4 @@
-import { TbBeach, TbMountain, TbPool } from 'react-icons/tb'
+
 import {
   GiBarn,
   GiBoatFishing,
@@ -7,12 +7,12 @@ import {
   GiCaveEntrance,
   GiForestCamp,
   GiIsland,
-  GiWindmill,
 } from 'react-icons/gi'
+import { TbBeach, TbMountain, TbWindmill } from 'react-icons/tb'
 import { FaSkiing } from 'react-icons/fa'
 import { BsSnow } from 'react-icons/bs'
 import { IoDiamond } from 'react-icons/io5'
-import { MdOutlineVilla } from 'react-icons/md'
+import { MdOutlineVilla, MdPool } from 'react-icons/md'
 
 export const categories = [
   {
@@ -22,7 +22,7 @@ export const categories = [
   },
   {
     label: 'Windmills',
-    icon: GiWindmill,
+    icon: TbWindmill,
     description: 'This property is has windmills!',
   },
   {
@@ -37,7 +37,7 @@ export const categories = [
   },
   {
     label: 'Pools',
-    icon: TbPool,
+    icon: MdPool,
     description: 'This is property has a beautiful pool!',
   },
   {
