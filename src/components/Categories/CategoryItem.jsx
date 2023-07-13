@@ -8,7 +8,7 @@ const CategoryItem = ({ category }) => {
         <div className="text-sky-900">
         <Icon size={26} />
         </div>
-        <div className="mx-2">{label}</div>
+        <div className="mx-2 font-semibold">{label}</div>
       </div>
     </div>
   );
