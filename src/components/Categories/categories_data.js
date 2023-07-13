@@ -7,12 +7,14 @@ import {
   GiCaveEntrance,
   GiForestCamp,
   GiIsland,
+  GiModernCity,
+  GiVillage
 } from 'react-icons/gi'
-import { TbBeach, TbMountain, TbWindmill } from 'react-icons/tb'
+import { TbBeach, TbWindmill } from 'react-icons/tb'
 import { FaSkiing } from 'react-icons/fa'
 import { BsSnow } from 'react-icons/bs'
 import { IoDiamond } from 'react-icons/io5'
-import { MdOutlineVilla, MdPool } from 'react-icons/md'
+import { MdPool } from 'react-icons/md'
 
 export const categories = [
   {
@@ -27,12 +29,12 @@ export const categories = [
   },
   {
     label: 'Modern',
-    icon: MdOutlineVilla,
+    icon: GiModernCity,
     description: 'This property is modern!',
   },
   {
     label: 'Countryside',
-    icon: TbMountain,
+    icon: GiVillage,
     description: 'This property is in the countryside!',
   },
   {
