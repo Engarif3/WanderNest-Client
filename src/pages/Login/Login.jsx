@@ -1,8 +1,74 @@
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 import { FcGoogle } from 'react-icons/fc'
+import useAuth from '../../hooks/useAuth'
+import { toast } from 'react-hot-toast';
+import {ImSpinner9} from 'react-icons/Im'
+import { useRef } from 'react';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const emailRef = useRef();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+  
+  const {
+  
+    loading,
+    setLoading,
+    signIn,
+    signInWithGoogle,
+    resetPassword
+  } = useAuth();
+
+  const handleSubmit =(event)=>{
+    event.preventDefault();
+    const form = event.target;
+    const email = form.email.value;
+    const pass = form.password.value;
+    
+    // handle sign-in
+    signIn(email, pass)
+    .then(res =>{
+      console.log(res.user)
+      navigate(from, {replace: true})
+    })
+    .catch(err =>{
+      console.log(err.message)
+      toast.error(err.message)
+      setLoading(false)
+    })
+  }
+
+  // handle google sign-in
+  const handleGoogleSignIn =()=>{
+    signInWithGoogle()
+    .then(res =>{
+      console.log(res.user)
+      navigate(from, {replace: true})
+    })
+    .catch(err =>{
+      console.log(err.message)
+      toast.error(err.message)
+      setLoading(false)
+    }) 
+  }
+
+  // handle password reset
+  const handlePassReset =()=>{
+    const email = emailRef.current.value;
+    resetPassword(email)
+    .then(() =>{
+      toast.success("Please check your email to reset the password")
+      setLoading(false)
+    })
+    .catch(err =>{
+      console.log(err.message)
+      toast.error(err.message)
+      setLoading(false)
+    }) 
+  }
+
   return (
     <div className='flex justify-center items-center min-h-screen'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>
@@ -13,6 +79,7 @@ const Login = () => {
           </p>
         </div>
         <form
+          onSubmit={handleSubmit}
           noValidate=''
           action=''
           className='space-y-6 ng-untouched ng-pristine ng-valid'
@@ -23,6 +90,7 @@ const Login = () => {
                 Email address
               </label>
               <input
+                ref={emailRef}
                 type='email'
                 name='email'
                 id='email'
@@ -54,12 +122,12 @@ const Login = () => {
               type='submit'
               className='bg-rose-500 w-full rounded-md py-3 text-white'
             >
-              Continue
+              {loading? <ImSpinner9 className='mx-auto animate-spin' size={26}/>: "Continue"  }
             </button>
           </div>
         </form>
         <div className='space-y-1'>
-          <button className='text-xs hover:underline hover:text-rose-500 text-gray-400'>
+          <button onClick={handlePassReset} className='text-xs hover:underline hover:text-rose-500 text-gray-400'>
             Forgot password?
           </button>
         </div>
@@ -70,7 +138,7 @@ const Login = () => {
           </p>
           <div className='flex-1 h-px sm:w-16 dark:bg-gray-700'></div>
         </div>
-        <div className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
+        <div onClick={handleGoogleSignIn} className='flex justify-center items-center space-x-2 border m-3 p-2 border-gray-300 border-rounded cursor-pointer'>
           <FcGoogle size={32} />
 
           <p>Continue with Google</p>
