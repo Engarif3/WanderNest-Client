@@ -7,4 +7,4 @@ const PageTitle = ({ title, subtitle, center }) => {
     )
   }
   
-  export default PageTitle
+export default PageTitle
