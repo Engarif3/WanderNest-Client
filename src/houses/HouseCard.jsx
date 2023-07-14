@@ -28,7 +28,7 @@ const HouseCard = () => {
           <div
             className='
             absolute
-            top-3
+            bottom-3
             right-3
           '
           >

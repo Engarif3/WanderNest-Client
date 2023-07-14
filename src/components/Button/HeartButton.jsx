@@ -21,7 +21,7 @@ const HeartButton = () => {
       />
       <AiFillHeart
         size={24}
-        className='fill-neutral-500/70 hover:fill-rose-500'
+        className='fill-neutral-400 hover:fill-rose-500'
       />
     </div>
   )
