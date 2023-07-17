@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home'
 import Login from '../pages/Login/Login'
 import SignUp from '../pages/SignUp/SignUp'
 import HouseDetails from '../pages/HouseDetails/HouseDetails'
+import PrivateRoute from './PrivateRoute'
 
 
 export const router = createBrowserRouter([
@@ -17,7 +18,9 @@ export const router = createBrowserRouter([
       },
       {
         path: '/house/:id',
-        element: <HouseDetails></HouseDetails>
+        element: <PrivateRoute>
+          <HouseDetails></HouseDetails>
+        </PrivateRoute>
       }
     ]
   },
