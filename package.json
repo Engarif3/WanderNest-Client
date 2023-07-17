@@ -1,5 +1,5 @@
 {
-  "name": "aircnc-client",
+  "name": "wandernest-client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -20,8 +20,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.2",
-    "react-spinners": "^0.13.8",
-    "react-sweetalert2": "^0.5.2"
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "@types/react": "^18.0.28",
