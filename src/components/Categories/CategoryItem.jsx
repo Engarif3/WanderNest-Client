@@ -4,7 +4,7 @@ import queryString from "query-string";
 
 const CategoryItem = ({ category }) => {
   const [params, setParams] = useSearchParams();
-  const value = params.get("category");
+  // const value = params.get("category");
   const navigate = useNavigate();
   // console.log(value)
   const { label, icon: Icon } = category;

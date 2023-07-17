@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Logo = () => {
   return (
-    <Link>
+    <Link to="/">
       <div className="flex">
         <img
           className="hidden md:block animate-spin"
