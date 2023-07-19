@@ -11,7 +11,7 @@ const Loader = () => {
       items-center 
     '
     >
-      <MoonLoader color="red" size={100} />
+      <MoonLoader color="#fb1114" size={100} />
     </div>
   )
 }

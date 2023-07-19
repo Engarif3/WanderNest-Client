@@ -11,7 +11,7 @@ const Logo = () => {
           alt="logo"
           width="30"
         />
-        <p className="text-xl p-0 italic pl-2 text-orange-600 font-extrabold">
+        <p className="text-xl p-0 italic pl-2 text-[#fb1114] font-extrabold">
           WanderNest
         </p>
       </div>

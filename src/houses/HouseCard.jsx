@@ -5,8 +5,8 @@ import HeartButton from "../components/Button/HeartButton"
 const HouseCard = ({house}) => {
     const {location, dateRange, price, image } = house;
   return (
-    <Link to={`/house/${1}`} className='col-span-1 cursor-pointer group'>
-      <div className='flex flex-col gap-2 w-full'>
+    <Link to={`/house/${1}`} className='col-span-1 cursor-pointer group '>
+      <div className='flex flex-col gap-2 w-full '>
         <div
           className='
             aspect-square 
@@ -14,6 +14,9 @@ const HouseCard = ({house}) => {
             relative 
             overflow-hidden 
             rounded-xl
+            border-b-4 
+            border-[#fb1114]
+            hover:border-2
           '
         >
           <img
